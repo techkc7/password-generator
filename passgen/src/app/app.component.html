@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <div class="container">
+
+
+    <nav class="navbar navbar-light bg-primary  justify-content-between">
+      <br>
+      <br>
+
+    </nav>
+    <div class="card text-justify">
+
+      <div class="card-header">
+        <h1 class="text-primary text-center text">Password Generator</h1>
+      </div>
+
+      <div class="card-body">
+        <div class="col-5 offset-2 pt-2">
+          <input type="text" (input)="lenChange($event.target.value)" placeholder="Password length" name="num"
+            class="form-control">
+
+        </div>
+
+        <div class="col-5 offset-2 pt-2">
+          <input id="number" (change)="OnChangeNum()" class="form-check-input" type="checkbox" name="" value="true">
+          <label for="number" class="form-check-label">Include Number</label>
+
+        </div>
+        <div class="col-5 offset-2 pt-2">
+
+          <input id="number" (change)="OnChangeChar()" class="form-check-input" type="checkbox" name="" value="true">
+          <label for="number" class="form-check-label">Small Letter Character</label>
+        </div>
+        <div class="col-5 offset-2 pt-2">
+
+          <input id="number" (change)="OnChangeCap()" class="form-check-input" type="checkbox" name="" value="true">
+          <label for="number" class="form-check-label">Capital Letter Character</label>
+        </div>
+
+        <div class="col-5 offset-2 pt-2">
+
+          <input id="number" (change)="OnChangeSymbol()" class="form-check-input" type="checkbox" name="" value="true">
+          <label for="number" class="form-check-label">Include Special Character</label>
+        </div>
+        <div class="col-5 offset-2 pt-2">
+          <button class="btn btn-block btn-primary text-light"
+						[disabled]="!(length&&(cap||charInclude||numInclude||symbolInclude))" (click)="OnBtnClick()">
+						
+            Generate Password
+          </button>
+
+        </div>
+     <br>		
+		
+        <div class="col-5 offset-2 pt-2">
+
+					<h3 style=" text-align:center; margin: 8px; font-size:28px ;padding:4px;  width: 100%;" *ngIf="password.length>0?1:0">
+				
+            {{password}}</h3>
+
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-text">
+
+      </span>
+      <br>
+      <br>
+    </nav>
+
+  </div>
+</div>
